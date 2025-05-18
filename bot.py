@@ -18,7 +18,7 @@ dp = Dispatcher(bot)
 HEADERS = {'User-Agent': 'Mozilla/5.0'}
 
 # 2) Задайте свой Telegram user_id (integer), чтобы получать доступ к /stats
-ADMINS = [@Uou78l]  
+ADMINS = [6052622344]  
 USERS_LOG = set()
 
 # Поиск на Wildberries
