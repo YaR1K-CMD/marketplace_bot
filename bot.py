@@ -157,3 +157,16 @@ async def search_handler(message: types.Message):
 if __name__ == '__main__':
     from aiogram import executor
     executor .start_polling(dp, skip_updates=True)
+from aiogram import executor
+
+async def on_startup(dp):
+    # Снимаем webhook и сбрасываем старые апдейты
+    await bot.delete_webhook(drop_pending_updates=True)
+
+if _name_ == '_main_':
+    # Передаем on_startup в polling
+    executor.start_polling(
+        dp,
+        skip_updates=True,
+        on_startup=on_startup
+    )
