@@ -139,4 +139,5 @@ async def search_handler(message: types.Message):
 
 # Запуск бота
 if _name_ == '_main_':
-    executor.start_polling(dp, skip_updates=True)
+    from aiogram import executor
+    executor .start_polling(dp, skip_updates=True)
