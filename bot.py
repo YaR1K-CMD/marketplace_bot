@@ -6,7 +6,23 @@ from aiogram.types import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
 from bs4 import BeautifulSoup
 import urllib.parse
 import json
+from fastapi import FastAPI
+import threading
+import os
 
+app = FastAPI()
+
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
+
+def run_health_server():
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
+
+# Запускаем FastAPI в отдельном потоке, чтобы основной бот не блокировался
+threading.Thread(target=run_health_server, daemon=True).start()
 # 1) Получаем токен бота из переменной окружения
 #    Либо прямо вставьте строку: "123456:ABC-DEF..."
 TELEGRAM_TOKEN = os.getenv("7953525862:AAGDiMFPLa0SMfnEApFwfYGnYZmwVEsXIkg") or "7953525862:AAGDiMFPLa0SMfnEApFwfYGnYZmwVEsXIkg"
