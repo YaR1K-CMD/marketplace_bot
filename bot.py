@@ -138,7 +138,7 @@ async def search_handler(message: types.Message):
     await message.answer("поиск🔎")
     results = await aggregate_results(query)
     if not results:
-        await message.answer("Ничего не найдено.")
+        await message.answer("Хмм,ничего не найдено...")
         return
 
     await message.answer("найдено:")
