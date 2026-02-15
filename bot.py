@@ -25,7 +25,7 @@ def run_health_server():
 threading.Thread(target=run_health_server, daemon=True).start()
 # 1) Получаем токен бота из переменной окружения
 #    Либо прямо вставьте строку: "123456:ABC-DEF..."
-TELEGRAM_TOKEN = os.getenv("7953525862:AAGDiMFPLa0SMfnEApFwfYGnYZmwVEsXIkg") or "7953525862:AAGDiMFPLa0SMfnEApFwfYGnYZmwVEsXIkg"
+TELEGRAM_TOKEN = os.getenv("0000000:xxxxxxxxxxxxxx...") or "000000000:xxxxxxxxxxx..."
 
 logging.basicConfig(level=logging.INFO)
 bot = Bot(token=TELEGRAM_TOKEN, parse_mode=ParseMode.HTML)
